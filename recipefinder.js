@@ -17,3 +17,16 @@ async function searchRecipes(){
     displayRecipes(data.meals);
 }
 
+function displayRecipes(meals){
+if(!meals){
+recipeContainer.innerHTML = '<p>No recipe found</p>';
+return;
+}
+
+
+
+
+
+
+}
+
