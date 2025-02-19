@@ -10,9 +10,9 @@ async function searchRecipes(){
 
     if(!query) return alert('Please enter a recipe name');
 
-    recipeContainer.innerHTML = "loadig";
+    recipeContainer.innerHTML = "Loadig...";
     const response =  await fetch(API_URL + query);
-    const data = response.json();
+    const data = await response.json();
 
     displayRecipes(data.meals);
 }
@@ -25,8 +25,8 @@ return;
 recipeContainer.innerHTML = meals.map(meal=>`
     <div class = "card">
     <h2>${meal.strMeal}</h2>
-    <p><strong>Category</strong>${meal.strCategory}</p>
-    <p><strong>Instructions</strong>${meal.strInstructions}</p>
+    <p><strong>Category: </strong>${meal.strCategory}</p>
+    <p><strong>Instructions: </strong>${meal.strInstructions}</p>
 
     </div>
     `
@@ -34,7 +34,7 @@ recipeContainer.innerHTML = meals.map(meal=>`
 
 }
 
-searchBtn.addEventListener('click', "searchRecipes");
+searchBtn.addEventListener('click', searchRecipes);
 
 
 
