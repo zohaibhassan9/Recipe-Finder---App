@@ -22,11 +22,6 @@ if(!meals){
 recipeContainer.innerHTML = '<p>No recipe found</p>';
 return;
 }
-
-
-
-
-
-
 }
+
 
