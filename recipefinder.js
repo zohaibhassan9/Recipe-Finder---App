@@ -25,7 +25,7 @@ return;
 recipeContainer.innerHTML = meals.map(meal=>`
     <div class = "card">
     <h2>${meal.strMeal}</h2>
-    <img src = "${meal.strMealThumb}" alt="${meal.strMeal}">
+    <img src = "${meal.strMealThumb}" alt="${meal.strMeal}" style = "width: 200px; height: 200px">
     <p><strong>Category: </strong>${meal.strCategory}</p>
     <p><strong>Instructions: </strong>${meal.strInstructions}</p>
 
