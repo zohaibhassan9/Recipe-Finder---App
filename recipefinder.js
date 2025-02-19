@@ -6,7 +6,7 @@ const savedRecipes = document.getElementById('savedRecipes');
 const API_URL = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 async function searchRecipes(){
-    const query = searchInput.ariaValueMax.trim();
+    const query = searchInput.value.trim();
 
     if(!query) return alert('Please enter a recipe name');
 
@@ -22,6 +22,19 @@ if(!meals){
 recipeContainer.innerHTML = '<p>No recipe found</p>';
 return;
 }
+recipeContainer.innerHTML = meals.map(meal=>`
+    <div class = "card">
+    <h2>${meal.strMeal}</h2>
+    <p><strong>Category</strong>${meal.strCategory}</p>
+    <p><strong>Instructions</strong>${meal.strInstructions}</p>
+
+    </div>
+    `
+   ).join('');
+
 }
+
+searchBtn.addEventListener('click', "searchRecipes");
+
 
 
